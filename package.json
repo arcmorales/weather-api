@@ -31,6 +31,10 @@
   "scripts": {
     "test": "npx playwright test",
     "lint:staged": "lint-staged",
+    "sast:Format": "npx prettier --check --end-of-line auto ./",
+    "sast:FormatFix": "npx prettier --write --end-of-line auto ./",
+    "sast:Lint": "npx eslint ./ --ext .js,.ts",
+    "sast:LintFix": "npx eslint ./ --ext .js,.ts --fix",
     "prepare": "husky install"
   },
   "version": "1.0.0",

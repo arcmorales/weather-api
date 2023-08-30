@@ -8,6 +8,14 @@
     "plugin:sonarjs/recommended"
   ],
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "off",
@@ -29,6 +37,7 @@
     "no-await-in-loop": "off",
     "import/no-default-export": "off",
     "sonarjs/no-nested-template-literals": "off",
-    "@typescript-eslint/prefer-optional-chain": "error"
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "react/jsx-filename-extension": "off"
   }
 }

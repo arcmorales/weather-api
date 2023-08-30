@@ -19,16 +19,16 @@ test.describe('Get Weather Data', () => {
 
     expect(response.ok()).toBeTruthy()
 
-    expect(data.lat, `incorrect latitude returned`).toEqual(parseFloat(COORDINATES.lat.toFixed(4)))
-    expect(data.lon, `incorrect longitude returned`).toEqual(parseFloat(COORDINATES.lon.toFixed(4)))
+    expect(data.lat, `incorrect latitude returned`).toEqual(Number.parseFloat(COORDINATES.lat.toFixed(4)))
+    expect(data.lon, `incorrect longitude returned`).toEqual(Number.parseFloat(COORDINATES.lon.toFixed(4)))
     expect(data, `missing property "weather"`).toHaveProperty(`weather`)
     expect(data, `missing property "weather.code"`).toHaveProperty(`weather.code`)
     expect(data, `missing property "weather.description"`).toHaveProperty(`weather.description`)
     expect(data, `missing property "weather.icon" `).toHaveProperty(`weather.icon`)
 
-    expect(typeof data['city_name'], `prop "city_name" has incorrect data type`).toBe(`string`)
-    expect(typeof data['country_code'], `prop "country_code" has incorrect data type`).toBe(`string`)
-    expect(typeof data['timezone'], `prop "timezone" has incorrect data type`).toBe(`string`)
+    expect(typeof data.city_name, `prop "city_name" has incorrect data type`).toBe(`string`)
+    expect(typeof data.country_code, `prop "country_code" has incorrect data type`).toBe(`string`)
+    expect(typeof data.timezone, `prop "timezone" has incorrect data type`).toBe(`string`)
   })
 
   test('AC3: As a frequent flyer, I want to programmatically find the current warmest capital city in Australia', async ({
@@ -50,16 +50,17 @@ test.describe('Get Weather Data', () => {
 
     expect(response.ok()).toBeTruthy()
 
-    sortByAppTemp.forEach((cityData) => {
-      expect(typeof cityData['city_name'], `prop city_name has incorrect data type`).toBe(`string`)
-      expect(typeof cityData['app_temp'], `${cityData['city_name']} has incorrect apparent temperature`).toBe(`number`)
+    sortByAppTemp.forEach((capitalData) => {
+      expect(typeof capitalData.city_name, `prop city_name has incorrect data type`).toBe(`string`)
+      expect(typeof capitalData.app_temp, `${capitalData.city_name} has incorrect apparent temperature`).toBe(`number`)
     })
 
     console.log(
-      `The warmest capital city in Australia is ${warmestCapitalCity['city_name']} with an apparent temperature of ${warmestCapitalCity['app_temp']} degrees`
+      `The warmest capital city in Australia is ${warmestCapitalCity.city_name} with an apparent temperature of" +
+      " ${warmestCapitalCity.app_temp} degrees`
     )
     console.log(
-      `While the coldest capital city in Australia is ${coldestCapitalCity['city_name']} with an apparent temperature of ${coldestCapitalCity['app_temp']} degrees`
+      `While the coldest capital city in Australia is ${coldestCapitalCity.city_name} with an apparent temperature of ${coldestCapitalCity.app_temp} degrees`
     )
   })
 })
