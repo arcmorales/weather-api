@@ -1,7 +1,8 @@
 {
+  "include": ["commons", "tests/*"]
   "compilerOptions": {
     "target": "ES2019",
-    "module": "esnext",
+    "module": "commonjs",
     "esModuleInterop": true,
     "strict": true,
     "allowJs": true,

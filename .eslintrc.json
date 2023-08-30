@@ -3,20 +3,11 @@
   "extends": [
     "airbnb-typescript",
     "plugin:prettier/recommended",
-    "plugin:jest/recommended",
     "plugin:promise/recommended",
     "plugin:unicorn/recommended",
     "plugin:sonarjs/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module",
-    "project": ["./tsconfig.json"]
-  },
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "off",
@@ -31,13 +22,12 @@
     "unicorn/prefer-module": "off",
     "unicorn/prevent-abbreviations": "off",
     "unicorn/no-array-for-each": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.ts*"] }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.spec.ts*"] }],
     "import/prefer-default-export": "off",
     "no-prototype-builtins": "off",
     "no-restricted-syntax": "off",
     "no-await-in-loop": "off",
     "import/no-default-export": "off",
-    "react/require-default-props": "off",
     "sonarjs/no-nested-template-literals": "off",
     "@typescript-eslint/prefer-optional-chain": "error"
   }
