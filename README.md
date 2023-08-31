@@ -1,5 +1,7 @@
 # Weather API Test in Playwright
 
+[![API Test](https://github.com/arcmorales/weather-api/actions/workflows/test.yml/badge.svg)](https://github.com/arcmorales/weather-api/actions/workflows/test.yml)
+
 This repository is an API Test in NodeJS and TypeScript using [Playwright](https://playwright.dev/)
 
 ## Installation
