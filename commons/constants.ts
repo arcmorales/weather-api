@@ -1,18 +1,16 @@
-export interface IAusCapital {
-  Sydney: number
-  Melbourne: number
-  Brisbane: number
-  Canberra: number
-  Darwin: number
-  Hobart: number
-  Perth: number
-  Adelaide: number
-}
+type AustralianCapitalCities =
+  | 'Sydney'
+  | 'Melbourne'
+  | 'Brisbane'
+  | 'Canberra'
+  | 'Darwin'
+  | 'Hobart'
+  | 'Perth'
+  | 'Adelaide'
 
-export interface ICoordinates {
-  lat: number
-  lon: number
-}
+export interface IAusCapital extends Record<AustralianCapitalCities, number> {}
+
+interface ICoordinates extends Record<'lat' | 'lon', number> {}
 
 export const AUS_CAPITAL_CITIES: IAusCapital = {
   Sydney: 2_147_714,
