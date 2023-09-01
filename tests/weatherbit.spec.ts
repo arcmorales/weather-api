@@ -30,6 +30,12 @@ test.describe('Get Weather Data', () => {
     expect(typeof data.city_name, `prop "city_name" type to be string`).toBe(`string`)
     expect(typeof data.country_code, `prop "country_code" type to be string`).toBe(`string`)
     expect(typeof data.timezone, `prop "timezone" type to be string`).toBe(`string`)
+
+    console.log(
+      `In ${data.city_name}, the apparent temperature is ${
+        data.app_temp
+      } degrees with ${data.weather.description.toLowerCase()}.`
+    )
   })
 
   test('@AC3: As a frequent flyer, I want to programmatically find the current warmest capital city in Australia', async ({
