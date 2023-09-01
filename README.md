@@ -48,15 +48,19 @@ npm test -- -g @AC3
 The test would output a test result summary in list format as such:
 
 ```> weatherbit-api-test@1.0.0 test
+> weatherbit-api-test@1.0.0 test
 > npx playwright test
 
 
 Running 2 tests using 2 workers
 
-  ✓  1 weatherbit.spec.ts:35:7 › Get Weather Data › @AC3: As a frequent flyer, I want to programmatically find the current warmest capital city in Australia (1.7s)
-  ✓  2 weatherbit.spec.ts:9:7 › Get Weather Data › @AC2: As a frequent flyer, I want to get current weather data for the city at Latitude: -33.865143, Longitude: 151.209900 (1.6s)
-The warmest capital city in Australia is Darwin with an apparent temperature of 26.3 degrees
-While the coldest capital city in Australia is Canberra with an apparent temperature of 8.3 degrees
+  ✓  1 weatherbit.spec.ts:41:7 › Get Weather Data › @AC3: As a frequent flyer, I want to programmatically find the current warmest capital city in Australia (776ms)
+  ✓  2 weatherbit.spec.ts:9:7 › Get Weather Data › @AC2: As a frequent flyer, I want to get current weather data for the city at Latitude: -33.865143, Longitude: 151.209900 (773ms)
+In Sydney, the apparent temperature is 16.7 degrees with scattered clouds.
+The warmest capital city in Australia is Darwin with an apparent temperature of 29.6 degrees
+While the coldest capital city in Australia is Canberra with an apparent temperature of 10.6 degrees
+
+  2 passed (972ms)
 
 ```
 
